@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app" class="search">
+        <input type="text" class="search-input" id="searchInput" placeholder="" />
+        <label class="search-label" for="searchInput">Search</label>
+        <button id="searchButton" class="search-btn"><img src="./media/search.png" /></button>
+        <div id="loader" class="loader"><img src="./media/loading.png" /></div>
+    </div>
+    <div id="resultsContainer" class="result">
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

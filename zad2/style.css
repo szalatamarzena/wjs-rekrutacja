@@ -1,0 +1,115 @@
+:root {
+    --input-color: #D1D1D1;
+    --results-primary-color: #F4F4F4;
+    --results-secondary-color: #D9D9D9;
+    --color-white: #ffffff;
+}
+
+body {
+    font-family: Inter, sans-serif;
+}
+
+.search {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 370px;
+
+    .search-label {
+        position: absolute;
+        font-size: 13px;
+        color: var(--input-color);
+        background-color: var(--color-white);
+        cursor: text;
+        z-index: 2;
+        transition: all .3s ease;
+        margin: 0 10px;
+        padding: 0 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .search-input {
+        width: 100%;
+        height: 60px;
+        border-radius: 5px;
+        border: 1px solid var(--input-color);
+        padding: 0 18px;
+
+        &:focus {
+            outline: none
+        }
+    }
+
+    .search-input:focus+.search-label,
+    .search-input:not(:placeholder-shown):not(:focus):valid+.search-label {
+        font-size: 11px;
+        top: 0;
+
+    }
+
+    .search-btn {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 0;
+        padding: 8px 10px;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+
+    .loader {
+        display: none;
+        position: absolute;
+        right: 53px;
+
+        &.is-visible {
+            display: initial;
+        }
+    }
+}
+
+.result {
+    width: 370px;
+    position: relative;
+
+    .arrow {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        background: var(--results-primary-color);
+        transform: rotate(45deg);
+        z-index: -1;
+        left: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        background-color: var(--results-primary-color);
+        padding: 20px;
+        border: 1px solid #F4F4F4;
+        border-radius: 5px;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--results-secondary-color);
+
+            span:last-child {
+                font-weight: 500;
+            }
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                border: none;
+            }
+        }
+    }
+}
